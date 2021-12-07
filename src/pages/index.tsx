@@ -90,7 +90,9 @@ export default function Home({ postsPagination }: HomeProps) {
   )
 }
 
-export const getStaticProps = async () => {
+export const getStaticProps = async ({
+  preview = false
+}) => {
   const prismic = getPrismicClient();
 
   const postsResponse = await prismic.query([
@@ -117,7 +119,8 @@ export const getStaticProps = async () => {
       postsPagination: {
         results: posts,
         next_page: postsResponse.next_page
-      }
+      },
+      preview
     },
   }
 };
