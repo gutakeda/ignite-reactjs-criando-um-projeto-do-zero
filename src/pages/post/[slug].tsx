@@ -1,6 +1,6 @@
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { useRouter } from 'next/router'
-import Head from 'next/Head';
+import Head from 'next/head';
 import { format } from 'date-fns';
 import ptBR from 'date-fns/locale/pt-BR';
 
